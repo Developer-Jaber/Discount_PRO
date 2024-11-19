@@ -1,0 +1,23 @@
+
+import { Outlet } from 'react-router-dom'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
+
+const BrandsPageLayout = () => {
+  return (
+    <div>
+      <header className='bg-base-200'>
+        <Header></Header>
+      </header>
+      <main className='min-h-screen'>
+          <Outlet></Outlet>
+      </main>
+      <footer className='bg-neutral'>
+        <Footer></Footer>
+      </footer>
+    </div>
+  )
+}
+
+export default BrandsPageLayout

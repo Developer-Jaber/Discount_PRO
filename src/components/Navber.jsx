@@ -1,13 +1,17 @@
+import { useContext } from "react"
 import { FaUserCircle } from "react-icons/fa"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../Provider/AuthProvider"
 
 const Navber = () => {
     const link = <>
-        <li className="btn-ghost"><Link>Home</Link></li>
-        <li className="btn-ghost"><Link>Brands</Link></li>
-        <li className="btn-ghost"><Link>My Profile</Link></li>
-        <li className="btn-ghost"><Link>About Dev</Link></li>
+        <li className="btn-ghost"><Link to="/">Home</Link></li>
+        <li className="btn-ghost"><Link to="/brands">Brands</Link></li>
+        <li className="btn-ghost"><Link to="/profile">My Profile</Link></li>
+        <li className="btn-ghost"><Link to="/aboutMe">About Dev</Link></li>
     </>
+
+    
   return (
     <div className='bg-base-200 navbar'>
       <div className='navbar-start'>
@@ -37,7 +41,7 @@ const Navber = () => {
            }
           </ul>
         </div>
-        <a className='font-semibold text-3xl btn btn-ghost'>Discount Pro</a>
+        <a className='font-semibold text-3xl btn btn-ghost'>Discount Pro </a>
       </div>
       <div className='lg:flex hidden navbar-center'>
         <ul className='gap-3 px-1 text-lg menu menu-horizontal'>
@@ -48,9 +52,9 @@ const Navber = () => {
       </div>
       <div className='navbar-end'>
         <FaUserCircle className="text-4xl"></FaUserCircle>
-        <button className="bg-slate-400 mx-3 px-7 py-3 rounded-sm font-bold">
+        <Link to='/login_register' className="bg-slate-400 mx-3 px-7 py-3 rounded-sm font-bold">
             Login
-        </button>
+        </Link>
       </div>
     </div>
   )

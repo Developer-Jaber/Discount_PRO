@@ -1,17 +1,27 @@
-import { useContext } from "react"
-import { FaUserCircle } from "react-icons/fa"
-import { Link } from "react-router-dom"
-import { AuthContext } from "../Provider/AuthProvider"
+import { useContext } from 'react'
+import { FaUserCircle } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { AuthContext } from '../Provider/AuthProvider'
 
 const Navber = () => {
-    const link = <>
-        <li className="btn-ghost"><Link to="/">Home</Link></li>
-        <li className="btn-ghost"><Link to="/brands">Brands</Link></li>
-        <li className="btn-ghost"><Link to="/profile">My Profile</Link></li>
-        <li className="btn-ghost"><Link to="/aboutMe">About Dev</Link></li>
+  const {user} = useContext(AuthContext)
+  const link = (
+    <>
+      <li className='btn-ghost'>
+        <Link to='/'>Home</Link>
+      </li>
+      <li className='btn-ghost'>
+        <Link to='/brands'>Brands</Link>
+      </li>
+      <li className='btn-ghost'>
+        <Link to='/login_register/my_profile'>My Profile</Link>
+      </li>
+      <li className='btn-ghost'>
+        <Link to='/aboutMe'>About Dev</Link>
+      </li>
     </>
+  )
 
-    
   return (
     <div className='bg-base-200 navbar'>
       <div className='navbar-start'>
@@ -36,24 +46,26 @@ const Navber = () => {
             tabIndex={0}
             className='z-[1] gap-3 bg-base-100 shadow mt-3 p-2 rounded-box w-52 text-lg dropdown-content menu menu-sm'
           >
-           {
-                link
-           }
+            {link}
           </ul>
         </div>
-        <a className='font-semibold text-3xl btn btn-ghost'>Discount Pro </a>
+        <a className='font-semibold text-3xl btn btn-ghost'>{user && user?.email}</a>
       </div>
       <div className='lg:flex hidden navbar-center'>
-        <ul className='gap-3 px-1 text-lg menu menu-horizontal'>
-         {
-            link
-         }
-        </ul>
+        <ul className='gap-3 px-1 text-lg menu menu-horizontal'>{link}</ul>
       </div>
       <div className='navbar-end'>
-        <FaUserCircle className="text-4xl"></FaUserCircle>
-        <Link to='/login_register' className="bg-slate-400 mx-3 px-7 py-3 rounded-sm font-bold">
-            Login
+        <Link
+          to='/login_register'
+          className='mx-3 px-7 py-3 rounded-sm font-bold'
+        >
+          {
+            user && user?.email ? (
+              <img className='rounded-full w-16 h-16' src={user.photoURL} alt="" />
+            ) : (
+              <FaUserCircle className='text-4xl'></FaUserCircle>
+            )
+          }
         </Link>
       </div>
     </div>

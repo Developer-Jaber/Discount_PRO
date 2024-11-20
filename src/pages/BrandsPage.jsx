@@ -3,7 +3,7 @@ import BrandCard from "../components/BrandCard";
 
 const BrandsPage = () => {
     const data = useLoaderData();
-
+    console.log(data);
   return (
     <section>
       <nav className='flex justify-between items-center mx-auto py-5 w-9/12'>
@@ -20,7 +20,7 @@ const BrandsPage = () => {
       </nav>
       <section>
         {
-            data?.map(brandCard=> <BrandCard key={brandCard.id} data={brandCard}></BrandCard>)
+           data && data?.map(brandCard => <BrandCard key={brandCard.id} data={brandCard}></BrandCard>)
         }
       </section>
     </section>

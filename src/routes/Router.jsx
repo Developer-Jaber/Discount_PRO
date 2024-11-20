@@ -8,6 +8,9 @@ import BrandDetails from "../private/BrandDetails";
 import LoginSignInPageLayout from "../layouts/LoginSignInPageLayout";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import Profile from "../private/Profile";
+import PrivetRouteForBrandDetails from "./PrivetRouteForBrandDetails";
+import PrivetRouteForProfile from "./PrivetRouteForProfile";
 
 
 const router = createBrowserRouter([
@@ -19,6 +22,7 @@ const router = createBrowserRouter([
     {
         path: "/brands",
         element: <BrandsPageLayout></BrandsPageLayout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/brands",
@@ -27,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/brands/:id",
-                element: <BrandDetails></BrandDetails>,
+                element: <PrivetRouteForBrandDetails><BrandDetails></BrandDetails></PrivetRouteForBrandDetails>,
                 loader: ()=> fetch('/discountCouponInfo.json')
             }
         ]
@@ -43,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: "/login_register/register",
                 element: <SignUp></SignUp>
+            },
+            {
+                path:  "/login_register/my_profile",
+                element: <PrivetRouteForProfile><Profile></Profile></PrivetRouteForProfile>,
             }
         ]
     },

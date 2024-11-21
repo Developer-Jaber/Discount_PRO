@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { VscGithubInverted } from 'react-icons/vsc'
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
-import toast, { Toaster } from 'react-hot-toast'
 import 'animate.css'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { toast, ToastContainer } from 'react-toastify'
 
 const Login = () => {
   const { loginUser, googleAuthentication } = useContext(AuthContext)
@@ -14,7 +14,6 @@ const Login = () => {
 
   const location = useLocation()
   const navigate = useNavigate()
-  console.log(location)
   const handleLogin = e => {
     e.preventDefault()
     const form = new FormData(e.target)
@@ -22,9 +21,8 @@ const Login = () => {
     const password = form.get('password')
 
     loginUser(email, password)
-      .then(reasul => {
-        console.log(reasul)
-        toast.success('You are succesfully loged in..')
+      .then((reasul) => {
+        toast('You are succesfully loged in..')
         navigate(location?.state ? location.state : '/')
       })
       .catch(err => {
@@ -34,12 +32,11 @@ const Login = () => {
 
   const handleGoogleAuth = () => {
     googleAuthentication()
-      .then(resut => {
-        console.log(resut)
+      .then((resut) => {
         navigate(location?.state ? location.state : '/')
       })
-      .catch(err => {
-        console.log(err)
+      .catch((err) => {
+        toast('Somthing worng..!!')
       })
   }
   return (
@@ -135,6 +132,7 @@ const Login = () => {
           </label>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   )
 }

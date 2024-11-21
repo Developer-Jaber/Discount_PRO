@@ -10,6 +10,7 @@ import {
 } from 'firebase/auth'
 import { createContext, useEffect, useState } from 'react'
 import auth from '../firebase/firebase.config'
+import { toast } from 'react-toastify'
 
 export const AuthContext = createContext(null)
 
@@ -32,11 +33,11 @@ const AuthProvider = ({ children }) => {
   const googleAuthentication = () => {
     const provider = new GoogleAuthProvider()
     return signInWithPopup(auth, provider)
-      .then(result => {
-        console.log(result)
+      .then(() => {
+        toast('Succces....!!')
       })
       .catch(err => {
-        console.log(err)
+       toast('invalid')
       })
   }
 
@@ -66,10 +67,10 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     return signOut(auth)
       .then(() => {
-        console.log('successfullly signout')
+        // console.log('successfullly signout')
       })
-      .catch(err => {
-        console.log(err)
+      .catch(() => {
+        // console.log(err)
       })
   }
 

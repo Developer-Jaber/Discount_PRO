@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import TopBrand from "../components/TopBrand";
 import Testimonials from "../components/Testimonials";
 import Achivement from "../components/Achivement";
+import { ToastContainer } from "react-toastify";
 
 const HomeLayout = () => {
     return (
@@ -34,6 +35,7 @@ const HomeLayout = () => {
                 <Footer></Footer>
             </footer>
             <Toaster></Toaster>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

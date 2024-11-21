@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 const UpdateProfile = () => {
     const navigate = useNavigate()
@@ -15,8 +16,9 @@ const UpdateProfile = () => {
             alert('Profile Information Updated..')
             navigate('/login_register/my_profile')
         })
-        .catch(err=>{
-            console.log(err)
+        .catch(()=>{
+            // console.log(err)
+            toast('Somthing Went Worng...!')
         })
 
     }
@@ -57,6 +59,7 @@ const UpdateProfile = () => {
           </div>
         </form>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
     );
 };

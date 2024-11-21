@@ -5,7 +5,7 @@ import Loding from '../pages/Loding'
 
 const PrivetRouteForBrandDetails = ({ children }) => {
     const location = useLocation()
-    console.log(location)
+    // console.log(location)
   const { user, loding } = useContext(AuthContext)
   if(loding){
     return <Loding></Loding>

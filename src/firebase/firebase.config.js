@@ -16,15 +16,6 @@ const firebaseConfig = {
 
 
 
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAM_Jh51aQRXIePjCq5TXSXgTuWL8aDryU",
-//   authDomain: "discount-pro-6b3a5.firebaseapp.com",
-//   projectId: "discount-pro-6b3a5",
-//   storageBucket: "discount-pro-6b3a5.firebasestorage.app",
-//   messagingSenderId: "946039622027",
-//   appId: "1:946039622027:web:4c2ce9c4c37baacc6b078e"
-// };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

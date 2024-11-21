@@ -47,7 +47,6 @@ const SignUp = () => {
       .catch(() => {
         return errorMassage
       })
-    console.log(email, password)
   }
   return (
     <div className='py-14'>

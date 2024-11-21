@@ -1,19 +1,20 @@
 import { useContext } from 'react'
 import { AuthContext } from '../Provider/AuthProvider'
+import { toast, ToastContainer } from 'react-toastify'
 
 const ResetPass = () => {
   const { forgetPassword } = useContext(AuthContext)
   const handleResetPass = e => {
     e.preventDefault()
     const email = e.target.email.value
-    console.log(email)
 
     forgetPassword(email)
       .then(() => {
         alert('Password reset mail is send.')
       })
-      .catch(res => {
-        console.log(res)
+      .catch(() => {
+        // console.log(res)
+        toast('Somthing Wrong')
       })
   }
   return (
@@ -45,6 +46,7 @@ const ResetPass = () => {
           </form>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   )
 }

@@ -4,7 +4,7 @@ const BrandSaleCard = ({ data }) => {
   const {brand_name,brand_logo,coupons,category} = data
   return (
     <div className='bg-slate-500 rounded-lg text-white carousel-item'>
-      <div className='shadow-lg rounded max-w-sm overflow-hidden'>
+      <div className='shadow-lg rounded max-w-72 overflow-hidden'>
         <img
           className='mx-auto mt-3 rounded-lg w-40 h-40 object-cover'
           src={brand_logo}

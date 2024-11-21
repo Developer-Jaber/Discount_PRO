@@ -13,6 +13,7 @@ import PrivetRouteForBrandDetails from "./PrivetRouteForBrandDetails";
 import PrivetRouteForProfile from "./PrivetRouteForProfile";
 import ResetPass from "../pages/ResetPass";
 import UpdateProfile from "../pages/UpdateProfile";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const router = createBrowserRouter([

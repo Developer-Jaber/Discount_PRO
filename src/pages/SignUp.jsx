@@ -1,33 +1,54 @@
-import React, { useContext } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
+import { toast, ToastContainer } from 'react-toastify'
 
 const SignUp = () => {
-  const {createUser,updateprofile} = useContext(AuthContext);
-  const navigate = useNavigate()
-  const location = useLocation()
-  console.log(location);
+  const { createUser, updateprofile } = useContext(AuthContext)
+  const [error, setError] = useState({})
+  const [errorMassage, setErrorMassage] = useState('')
+  const [succes, setSucces] = useState({})
 
-  const handleCreateUser = (e) => {
-      e.preventDefault();
-      const form = new FormData(e.target)
-      const name = form.get('displayName')
-      const photoUrl = form.get('photoUrl')
-      const email = form.get('email')
-      const password = form.get('password')
+  const handleCreateUser = e => {
+    e.preventDefault()
+    const form = new FormData(e.target)
+    const name = form.get('displayName')
+    // user name validation
+    if (name.length < 5) {
+      setError({ ...error, name: 'name must be 5 carecter long.' })
+      return
+    }
+    const photoUrl = form.get('photoUrl')
+    const email = form.get('email')
+    const password = form.get('password')
+    // password validation
+    const hasUpperCase = /[A-Z]/.test(password)
+    const hasLowerCase = /[a-z]/.test(password)
+    const isLongEnough = password.length >= 6
+    
+    if(!hasUpperCase) {
+      setErrorMassage('password should be minimum 1 uppercase carecter.')
+      return
+    }else if(!hasLowerCase){
+      setErrorMassage('password should be minimum 1 Lowercase carecter.')
+      return
+    }else if(!isLongEnough){
+      setErrorMassage('password should be minimum 6 carecter long.')
+      return
+    }
 
-      createUser(email,password)
-      .then(result=>{
-        console.log(result);
-        updateprofile({displayName:name,photoURL:photoUrl})
+    createUser(email, password)
+      .then(result => {
+        toast('You are succesfully sign up...')
+        updateprofile({ displayName: name, photoURL: photoUrl })
       })
-      .catch(err=>{
-        console.log(err)
+      .catch(() => {
+        return errorMassage
       })
-      console.log(email,password);
+    console.log(email, password)
   }
   return (
-    <div>
+    <div className='py-14'>
       <h1 className='mb-8 font-bold text-4xl text-center'>
         Welcome to Discount PRO – Register to Start Saving!
       </h1>
@@ -44,6 +65,11 @@ const SignUp = () => {
               className='input-bordered input'
               required
             />
+            {error.name && (
+              <label className='label'>
+                <span className='text-red-500 label-text'>{error.name}</span>
+              </label>
+            )}
           </div>
           <div className='form-control'>
             <label className='label'>
@@ -82,6 +108,9 @@ const SignUp = () => {
               required
             />
           </div>
+
+          {errorMassage && <p className='text-red-500'>{errorMassage}</p>}
+
           <div className='form-control mt-6'>
             <button className='btn btn-primary'>Sign Up</button>
           </div>
@@ -96,6 +125,7 @@ const SignUp = () => {
           </label>
         </form>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   )
 }

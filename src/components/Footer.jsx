@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
 
 const Footer = () => {
   return (
-    <footer className='bg-gray-800 mx-auto p-10 w-11/12 text-white footer'>
+    <footer className='mx-auto p-4 lg:p-10 w-11/12 text-white footer'>
       <div className='mx-auto mt-10 container'>
         <div className='gap-8 grid grid-cols-1 md:grid-cols-4'>
           {/* About Us */}
@@ -17,7 +17,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className='mb-2 font-bold text-2xl'>Quick Links</h3>
+            <h3 className='mb-2 font-bold text-xl lg:text-2xl'>Quick Links</h3>
             <ul className='p-0 text-slate-300 list-none'>
               <li className='mb-2'>
                 <a href='/brands' className='hover:underline'>
@@ -44,7 +44,7 @@ const Footer = () => {
 
           {/* Support */}
           <div>
-            <h3 className='mb-2 font-bold text-2xl'>Support</h3>
+            <h3 className='mb-2 font-bold text-xl lg:text-2xl'>Support</h3>
             <ul className='p-0 text-slate-300 list-none'>
               <li className='mb-2'>
                 <a href='/faq' className='hover:underline'>
@@ -66,7 +66,7 @@ const Footer = () => {
 
           {/* Contact Us */}
           <div>
-            <h3 className='mb-2 font-bold text-2xl'>Contact Us</h3>
+            <h3 className='mb-2 font-bold text-xl lg:text-2xl'>Contact Us</h3>
             <p className="text-slate-300">
               Email:{' '}
               <a

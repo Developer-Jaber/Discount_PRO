@@ -13,7 +13,7 @@ const BrandsPageLayout = () => {
       <main className='min-h-screen'>
           <Outlet></Outlet>
       </main>
-      <footer className='bg-neutral'>
+      <footer className='bg-gray-800'>
         <Footer></Footer>
       </footer>
     </div>

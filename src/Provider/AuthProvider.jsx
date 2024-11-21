@@ -14,9 +14,8 @@ import auth from '../firebase/firebase.config'
 export const AuthContext = createContext(null)
 
 const AuthProvider = ({ children }) => {
-   
   const [user, setUser] = useState(null)
-  const [loding,setLoding] = useState(true)
+  const [loding, setLoding] = useState(true)
   // create User with email,password
   const createUser = (email, password) => {
     setLoding(true)
@@ -54,26 +53,27 @@ const AuthProvider = ({ children }) => {
   }, [])
 
   // updat user profile
-  const updateprofile = (updatedData) => {
-    return updateProfile(auth.currentUser,updatedData)
+  const updateprofile = updatedData => {
+    return updateProfile(auth.currentUser, updatedData)
   }
 
   //forget password
-  const forgetPassword = (email) => {
-        return sendPasswordResetEmail(auth,email)
-  }   
- 
-  // User Logout
-  const logout = () =>{
-    return signOut(auth)
-    .then(()=>{
-        console.log('successfullly signout')
-    })
-    .catch(err=> {
-        console.log(err)
-    })
+  const forgetPassword = email => {
+    return sendPasswordResetEmail(auth, email)
   }
-  console.log(user)
+
+  // User Logout
+  const logout = () => {
+    return signOut(auth)
+      .then(() => {
+        console.log('successfullly signout')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  
 
   const authInfo = {
     user,

@@ -2,11 +2,11 @@ import Marquee from 'react-fast-marquee'
 
 const TopBrand = () => {
   return (
-    <div className='my-0 hero'>
-      <div className='text-center hero-content'>
+    <div className='my-0 lg:hero'>
+      <div className='text-center lg:hero-content'>
         <div className='max-w-full'>
-          <div className='mx-auto w-9/12'>
-            <h1 className='font-bold text-3xl'>
+          <div className='mx-auto w-full lg:w-9/12'>
+            <h1 className='font-bold text-xl lg:text-4xl'>
               Discover the Best Deals from Leading Brands
             </h1>
             <p className='py-2'>

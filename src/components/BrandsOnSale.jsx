@@ -13,11 +13,11 @@ const BrandsOnSale = () => {
   const brandOnSale = avilableBrand.filter(brand => brand.isSaleOn)
 
   return (
-    <div className='my-0 hero'>
-      <div className='text-center hero-content'>
+    <div className='my-0 lg:hero'>
+      <div className='p-0 text-center hero-content'>
         <div className='max-w-full'>
-          <div className='mx-auto w-9/12'>
-            <h1 className='font-bold text-3xl'>
+          <div className='mx-auto w-10/12 lg:w-9/12'>
+            <h1 className='font-bold text-xl lg:text-3xl'>
               Exclusive Deals from Your Favorite Brands
             </h1>
             <p className='py-2'>
@@ -28,7 +28,7 @@ const BrandsOnSale = () => {
             </p>
           </div>
 
-          <div className='space-x-4 bg-gray-300 my-5 p-4 rounded-box max-w-md carousel carousel-center'>
+          <div className='space-x-4 bg-gray-300 my-5 p-4 rounded-box max-w-xs lg:max-w-md carousel carousel-center'>
             
             {
                 brandOnSale.map(branndCard =>  <BrandSaleCard key={branndCard.id} data={branndCard}></BrandSaleCard>)

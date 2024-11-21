@@ -12,10 +12,10 @@ const HomeLayout = () => {
                 <Header></Header>
             </header>
             <main className="min-h-screen">
-                <section className="mx-auto p-10 w-8/12">
+                <section className="mx-auto mt-5 px-3 lg:p-10 w-full lg:w-8/12">
                     <Carousel></Carousel>
                 </section>
-                <section className="mx-auto p-10 w-10/12">
+                <section className="mx-auto p-10 w-full lg:w-10/12">
                     <TopBrand></TopBrand>
                 </section>
                 <section>

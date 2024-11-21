@@ -50,7 +50,7 @@ const Navber = () => {
             {link}
           </ul>
         </div>
-        <a className='font-semibold text-3xl animate__animated animate__rubberBand btn btn-ghost'>Discount PRO</a>
+        <a className='font-semibold text-xl lg:text-3xl animate__animated animate__rubberBand btn btn-ghost'>Discount PRO</a>
       </div>
       <div className='lg:flex hidden navbar-center'>
         <ul className='gap-3 px-1 text-lg menu menu-horizontal'>{link}</ul>
@@ -58,11 +58,11 @@ const Navber = () => {
       <div className='navbar-end'>
         <Link
           to='/login_register'
-          className='mx-3 px-7 py-3 rounded-sm font-bold'
+          className='lg:mx-3 px-3 lg:px-7 py-3 rounded-sm font-bold'
         >
           {
             user && user?.email ? (
-              <img className='rounded-full w-16 h-16' src={user?.photoURL} alt="" />
+              <img className='rounded-full w-12 lg:w-16 h-12 lg:h-16' src={user?.photoURL} alt="" />
             ) : (
               <FaUserCircle className='text-4xl'></FaUserCircle>
             )

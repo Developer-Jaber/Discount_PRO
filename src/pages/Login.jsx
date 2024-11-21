@@ -1,13 +1,14 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { VscGithubInverted } from 'react-icons/vsc'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
 import toast, { Toaster } from 'react-hot-toast'
-import 'animate.css';
+import 'animate.css'
 
 const Login = () => {
   const { loginUser, googleAuthentication } = useContext(AuthContext)
+  const [error, setError] = useState({})
   const location = useLocation()
   const navigate = useNavigate()
   console.log(location)
@@ -24,11 +25,9 @@ const Login = () => {
         navigate(location?.state ? location.state : '/')
       })
       .catch(err => {
-        console.log(err)
+        setError({ ...error, login: err.code })
       })
   }
-
-  
 
   const handleGoogleAuth = () => {
     googleAuthentication()
@@ -41,7 +40,7 @@ const Login = () => {
       })
   }
   return (
-    <div>
+    <div className='py-14'>
       <h1 className='mb-8 font-bold text-4xl text-center animate__animated animate__bounce'>
         Welcome Back, Savvy Shopper! Log In Now
       </h1>
@@ -71,8 +70,12 @@ const Login = () => {
                 className='input-bordered input'
                 required
               />
+              {error.login && <label className='text-red-500 label'>{error.login}</label>}
               <label className='label'>
-                <Link to="/login_register/reset_password" className='label-text-alt link link-hover'>
+                <Link
+                  to='/login_register/reset_password'
+                  className='label-text-alt link link-hover'
+                >
                   Forgot password?
                 </Link>
               </label>

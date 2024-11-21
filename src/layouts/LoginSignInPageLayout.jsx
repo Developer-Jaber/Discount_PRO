@@ -5,11 +5,11 @@ import Footer from '../components/Footer'
 
 const LoginSignInPageLayout = () => {
   return (
-    <div>
+    <div className="font-poppins">
       <header className='bg-base-200'>
         <Header></Header>
       </header>
-      <main className='py-10'>
+      <main>
         <Outlet></Outlet>
       </main>
       <footer className='bg-neutral'>

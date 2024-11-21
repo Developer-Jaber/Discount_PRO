@@ -4,6 +4,8 @@ import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TopBrand from "../components/TopBrand";
+import Testimonials from "../components/Testimonials";
+import Achivement from "../components/Achivement";
 
 const HomeLayout = () => {
     return (
@@ -20,6 +22,12 @@ const HomeLayout = () => {
                 </section>
                 <section>
                     <BrandsOnSale></BrandsOnSale>
+                </section>
+                <section>
+                    <Testimonials></Testimonials>
+                </section>
+                <section>
+                    <Achivement></Achivement>
                 </section>
             </main>
             <footer className="bg-neutral">

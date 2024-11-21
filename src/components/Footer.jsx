@@ -86,7 +86,7 @@ const Footer = () => {
               <h4 className='font-bold text-xl'>Follow Us</h4>
               <div className='flex space-x-4 mt-2 text-3xl'>
                 <a
-                  href='https://facebook.com'
+                  href='https://www.facebook.com/JaberHossain.F'
                   className='text-white hover:text-gray-400'
                 >
                   <FaFacebook></FaFacebook>

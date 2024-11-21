@@ -1,6 +1,5 @@
-import fashionHubImg from '../imgs/FashionHubCarousel2.jpeg'
 import petParadaisImg from '../imgs/PetParadiseCarousel.webp'
-import shopMartImg from '../imgs/shopmatrCarosol.jpeg'
+
 
 const Carousel = () => {
   return (
@@ -14,19 +13,25 @@ const Carousel = () => {
         </div>
         <div id='item2' className='w-full carousel-item'>
           <img
-            src={petParadaisImg}
+            src='https://i.ibb.co/TgyM8m1/bigsale.jpg'
             className='rounded-lg w-full h-40 lg:h-96'
           />
         </div>
         <div id='item3' className='w-full carousel-item'>
           <img
-            src={shopMartImg}
+            src='https://i.ibb.co/ZGgRvJm/bigsale2.jpg'
             className='rounded-lg w-full h-40 lg:h-96'
           />
         </div>
         <div id='item4' className='w-full carousel-item'>
           <img
-            src='https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp'
+            src='https://i.ibb.co/LkKhnKL/salediscount.webp'
+            className='rounded-lg w-full h-40 lg:h-96'
+          />
+        </div>
+        <div id='item4' className='w-full carousel-item'>
+          <img
+            src='https://i.ibb.co/7NRH74L/salediscountts.jpg'
             className='rounded-lg w-full h-40 lg:h-96'
           />
         </div>

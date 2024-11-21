@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "title": "1000+ Coupons Collected",
+      "description": "Successfully aggregated over 1000 discount coupons from various e-commerce platforms.",
+      "icon": "🎉"
+    },
+    {
+      "id": 2,
+      "title": "5000+ Users",
+      "description": "Our application has been used by over 5000 users, helping them save money on their purchases.",
+      "icon": "👥"
+    },
+    {
+      "id": 3,
+      "title": "Top 10 in Hackathon",
+      "description": "Secured a spot in the top 10 at the XYZ Hackathon with our innovative coupon collection solution.",
+      "icon": "🏆"
+    }
+  ]
+  

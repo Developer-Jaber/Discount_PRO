@@ -18,7 +18,7 @@ const Navber = () => {
         user && <li className='btn-ghost'><Link to='/login_register/my_profile'>My Profile</Link></li>
       }
       <li className='btn-ghost'>
-        <Link to='/aboutMe'>About Dev</Link>
+        <Link to='/aboutMe'>About Us</Link>
       </li>
     </>
   )

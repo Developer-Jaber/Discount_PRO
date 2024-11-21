@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomeLayout from "../layouts/HomeLayout";
-import About from "../pages/About";
 import ErrorPage from "../Err/ErrorPage";
 import BrandsPageLayout from "../layouts/BrandsPageLayout";
 import BrandsPage from "../pages/BrandsPage";
@@ -14,6 +13,7 @@ import PrivetRouteForProfile from "./PrivetRouteForProfile";
 import ResetPass from "../pages/ResetPass";
 import UpdateProfile from "../pages/UpdateProfile";
 import 'react-toastify/dist/ReactToastify.css';
+import AboutMe from "../pages/AboutMe";
 
 
 const router = createBrowserRouter([
@@ -66,8 +66,8 @@ const router = createBrowserRouter([
         ]
     },
     {
-    path: "/about",
-    element: <About></About>,
+    path: "/aboutMe",
+    element: <AboutMe></AboutMe>,
     }
 ])
 

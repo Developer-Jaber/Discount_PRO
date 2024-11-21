@@ -2,12 +2,14 @@ import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
 import { toast, ToastContainer } from 'react-toastify'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 const SignUp = () => {
   const { createUser, updateprofile } = useContext(AuthContext)
   const [error, setError] = useState({})
   const [errorMassage, setErrorMassage] = useState('')
   const [succes, setSucces] = useState({})
+  const [showPass, setShowPass] = useState(false)
 
   const handleCreateUser = e => {
     e.preventDefault()
@@ -25,14 +27,14 @@ const SignUp = () => {
     const hasUpperCase = /[A-Z]/.test(password)
     const hasLowerCase = /[a-z]/.test(password)
     const isLongEnough = password.length >= 6
-    
-    if(!hasUpperCase) {
+
+    if (!hasUpperCase) {
       setErrorMassage('password should be minimum 1 uppercase carecter.')
       return
-    }else if(!hasLowerCase){
+    } else if (!hasLowerCase) {
       setErrorMassage('password should be minimum 1 Lowercase carecter.')
       return
-    }else if(!isLongEnough){
+    } else if (!isLongEnough) {
       setErrorMassage('password should be minimum 6 carecter long.')
       return
     }
@@ -96,17 +98,25 @@ const SignUp = () => {
             />
           </div>
 
-          <div className='form-control'>
+          <div className='relative form-control'>
             <label className='label'>
               <span className='label-text'>Password</span>
             </label>
             <input
-              type='password'
+              type={showPass ? 'text' : 'password'}
               name='password'
               placeholder='password'
               className='input-bordered input'
               required
             />
+            <button
+              onClick={() => {
+                setShowPass(!showPass)
+              }}
+              className='top-12 right-2 absolute btn btn-xs'
+            >
+              {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+            </button>
           </div>
 
           {errorMassage && <p className='text-red-500'>{errorMassage}</p>}

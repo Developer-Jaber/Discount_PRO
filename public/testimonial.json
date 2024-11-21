@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "feedback": "Discount PRO has saved me so much money on my purchases. The interface is user-friendly, and the variety of coupons is amazing!",
+      "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "feedback": "I love how easy it is to find and use coupons with this app. Highly recommend it to all online shoppers!",
+      "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "feedback": "The best coupon collection app I've used so far. It has helped me discover great deals that I wouldn't have found otherwise.",
+      "avatar": "https://randomuser.me/api/portraits/women/3.jpg"
+    }
+  ]
+  

@@ -5,10 +5,13 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
 import toast, { Toaster } from 'react-hot-toast'
 import 'animate.css'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 const Login = () => {
   const { loginUser, googleAuthentication } = useContext(AuthContext)
   const [error, setError] = useState({})
+  const [showPass,setShowPass] = useState(false)
+
   const location = useLocation()
   const navigate = useNavigate()
   console.log(location)
@@ -59,17 +62,22 @@ const Login = () => {
                 required
               />
             </div>
-            <div className='form-control'>
+            <div className='relative form-control'>
               <label className='label'>
                 <span className='label-text'>Password</span>
               </label>
               <input
-                type='password'
+                type={showPass? 'text' : 'password'}
                 placeholder='password'
                 name='password'
                 className='input-bordered input'
                 required
               />
+              <button onClick={()=>{setShowPass(!showPass)}} className='top-12 right-2 absolute btn btn-xs'>
+                {
+                  showPass? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                }
+              </button>
               {error.login && <label className='text-red-500 label'>{error.login}</label>}
               <label className='label'>
                 <Link

@@ -37,7 +37,7 @@ const BrandDetails = () => {
           </div>
         </div>
         <Link
-          to='/'
+          to='/brands'
           className='flex bg-blue-400 mx-auto my-14 w-40 text-white btn'
         >
           See More Brand

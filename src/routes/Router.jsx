@@ -11,6 +11,8 @@ import SignUp from "../pages/SignUp";
 import Profile from "../private/Profile";
 import PrivetRouteForBrandDetails from "./PrivetRouteForBrandDetails";
 import PrivetRouteForProfile from "./PrivetRouteForProfile";
+import ResetPass from "../pages/ResetPass";
+import UpdateProfile from "../pages/UpdateProfile";
 
 
 const router = createBrowserRouter([
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
             {
                 path:  "/login_register/my_profile",
                 element: <PrivetRouteForProfile><Profile></Profile></PrivetRouteForProfile>,
+            },
+            {
+                path: "/login_register/reset_password",
+                element: <ResetPass></ResetPass>
+            },
+            {
+                path: "/login_register/update_profile",
+                element: <UpdateProfile></UpdateProfile>
             }
         ]
     },

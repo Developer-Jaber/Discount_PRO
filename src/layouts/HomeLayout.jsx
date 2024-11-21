@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import BrandsOnSale from "../components/BrandsOnSale";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
@@ -6,7 +7,7 @@ import TopBrand from "../components/TopBrand";
 
 const HomeLayout = () => {
     return (
-        <div>
+        <div className="font-poppins">
             <header className="bg-base-200">
                 <Header></Header>
             </header>
@@ -24,6 +25,7 @@ const HomeLayout = () => {
             <footer className="bg-neutral">
                 <Footer></Footer>
             </footer>
+            <Toaster></Toaster>
         </div>
     );
 };

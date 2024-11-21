@@ -1,33 +1,50 @@
 import { useContext } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { VscGithubInverted } from 'react-icons/vsc'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
+import toast, { Toaster } from 'react-hot-toast'
+import 'animate.css';
 
 const Login = () => {
-  const {loginUser,googleAuthentication} = useContext(AuthContext);
+  const { loginUser, googleAuthentication } = useContext(AuthContext)
+  const location = useLocation()
+  const navigate = useNavigate()
+  console.log(location)
+  const handleLogin = e => {
+    e.preventDefault()
+    const form = new FormData(e.target)
+    const email = form.get('email')
+    const password = form.get('password')
 
-  const handleLogin = (e) => {
-      e.preventDefault()
-      const form = new FormData(e.target)
-      const email = form.get('email')
-      const password = form.get('password')
-
-      loginUser(email,password)
-      .then(reasul=>{
+    loginUser(email, password)
+      .then(reasul => {
         console.log(reasul)
+        toast.success('You are succesfully loged in..')
+        navigate(location?.state ? location.state : '/')
       })
-      .catch(err=>{
+      .catch(err => {
         console.log(err)
       })
   }
 
+  
+
   const handleGoogleAuth = () => {
-      googleAuthentication()
+    googleAuthentication()
+      .then(resut => {
+        console.log(resut)
+        navigate(location?.state ? location.state : '/')
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
   return (
     <div>
-      <h1 className='mb-8 font-bold text-4xl text-center'>Welcome Back, Savvy Shopper! Log In Now</h1>
+      <h1 className='mb-8 font-bold text-4xl text-center animate__animated animate__bounce'>
+        Welcome Back, Savvy Shopper! Log In Now
+      </h1>
       <div className='bg-base-100 shadow-2xl mx-auto w-full max-w-md card shrink-0'>
         <div className='card-body'>
           <form onSubmit={handleLogin}>
@@ -55,9 +72,9 @@ const Login = () => {
                 required
               />
               <label className='label'>
-                <a href='#' className='label-text-alt link link-hover'>
+                <Link to="/login_register/reset_password" className='label-text-alt link link-hover'>
                   Forgot password?
-                </a>
+                </Link>
               </label>
             </div>
             <div className='form-control mt-6'>
@@ -87,6 +104,15 @@ const Login = () => {
           </div>
 
           {/* Navlink fo signup page */}
+          {/* <label className='label'>
+            <Link
+              to='/login_register/register'
+              href='#'
+              className='label-text-alt link link-hover'
+            >
+              Sign Up
+            </Link>
+          </label> */}
           <label className='label'>
             <Link
               to='/login_register/register'

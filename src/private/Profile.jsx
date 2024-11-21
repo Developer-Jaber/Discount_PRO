@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { FaRegEdit } from "react-icons/fa"
 import { AuthContext } from "../Provider/AuthProvider"
+import { Link } from "react-router-dom";
 
 const Profile = () => {
     const {user,logout} = useContext(AuthContext);
@@ -12,7 +13,7 @@ const Profile = () => {
   return (
     <div className='flex flex-col items-center bg-white shadow-lg mx-auto mt-10 p-6 rounded-lg max-w-md'>
       <div className='flex justify-end mb-4 w-full text-3xl'>
-        <button className='mr-2 bt'><FaRegEdit></FaRegEdit></button>
+        <Link to='/login_register/update_profile' className='mr-2'><FaRegEdit></FaRegEdit></Link>
       </div>
       
       <img

@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { FaUserCircle } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
+import 'animate.css';
 
 const Navber = () => {
   const {user} = useContext(AuthContext)
@@ -13,9 +14,9 @@ const Navber = () => {
       <li className='btn-ghost'>
         <Link to='/brands'>Brands</Link>
       </li>
-      <li className='btn-ghost'>
-        <Link to='/login_register/my_profile'>My Profile</Link>
-      </li>
+      {
+        user && <li className='btn-ghost'><Link to='/login_register/my_profile'>My Profile</Link></li>
+      }
       <li className='btn-ghost'>
         <Link to='/aboutMe'>About Dev</Link>
       </li>
@@ -49,7 +50,7 @@ const Navber = () => {
             {link}
           </ul>
         </div>
-        <a className='font-semibold text-3xl btn btn-ghost'>{user && user?.email}</a>
+        <a className='font-semibold text-3xl animate__animated animate__rubberBand btn btn-ghost'>Discount PRO</a>
       </div>
       <div className='lg:flex hidden navbar-center'>
         <ul className='gap-3 px-1 text-lg menu menu-horizontal'>{link}</ul>
@@ -61,7 +62,7 @@ const Navber = () => {
         >
           {
             user && user?.email ? (
-              <img className='rounded-full w-16 h-16' src={user.photoURL} alt="" />
+              <img className='rounded-full w-16 h-16' src={user?.photoURL} alt="" />
             ) : (
               <FaUserCircle className='text-4xl'></FaUserCircle>
             )

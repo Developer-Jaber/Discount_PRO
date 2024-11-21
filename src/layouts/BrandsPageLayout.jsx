@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 
 const BrandsPageLayout = () => {
   return (
-    <div>
+    <div className="font-poppins">
       <header className='bg-base-200'>
         <Header></Header>
       </header>

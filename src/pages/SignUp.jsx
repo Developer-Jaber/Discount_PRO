@@ -1,21 +1,25 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
 
 const SignUp = () => {
-  const {createUser} = useContext(AuthContext);
+  const {createUser,updateprofile} = useContext(AuthContext);
+  const navigate = useNavigate()
+  const location = useLocation()
+  console.log(location);
 
   const handleCreateUser = (e) => {
       e.preventDefault();
       const form = new FormData(e.target)
-      // const name = form.get('displayName')
-      // const photoUrl = form.get('photoUrl')
+      const name = form.get('displayName')
+      const photoUrl = form.get('photoUrl')
       const email = form.get('email')
       const password = form.get('password')
 
       createUser(email,password)
       .then(result=>{
         console.log(result);
+        updateprofile({displayName:name,photoURL:photoUrl})
       })
       .catch(err=>{
         console.log(err)
@@ -29,7 +33,7 @@ const SignUp = () => {
       </h1>
       <div className='bg-base-100 shadow-2xl mx-auto w-full max-w-md card shrink-0'>
         <form onSubmit={handleCreateUser} className='card-body'>
-          {/* <div className='form-control'>
+          <div className='form-control'>
             <label className='label'>
               <span className='label-text'>Name</span>
             </label>
@@ -40,8 +44,8 @@ const SignUp = () => {
               className='input-bordered input'
               required
             />
-          </div> */}
-          {/* <div className='form-control'>
+          </div>
+          <div className='form-control'>
             <label className='label'>
               <span className='label-text'>Photo URL</span>
             </label>
@@ -52,7 +56,7 @@ const SignUp = () => {
               className='input-bordered input'
               required
             />
-          </div> */}
+          </div>
           <div className='form-control'>
             <label className='label'>
               <span className='label-text'>Email</span>

@@ -18,7 +18,7 @@ const AboutMe = () => {
             <div className='md:pl-8 md:w-1/2'>
               <h3 className='mb-4 font-semibold text-2xl'>About Me</h3>
               <p className='mb-4'>
-                Hi, I'm [Your Name], a passionate software developer with a
+                Hi, I'm Jaber Hossain, a passionate software developer with a
                 strong background in web development and a keen interest in
                 creating innovative solutions to everyday problems. With years
                 of experience in various programming languages and frameworks, I

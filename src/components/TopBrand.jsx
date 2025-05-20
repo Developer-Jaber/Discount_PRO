@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const TopBrand = () => {
   return (
     <div className='my-0 lg:hero'>
-      <div className='text-center lg:hero-content'>
+      <div className='flex justify-center items-center min-h-screen text-center lg:hero-content'>
         <div className='max-w-full'>
           <div className='mx-auto w-full lg:w-9/12'>
             <h1 className='my-7 font-bold text-xl lg:text-4xl'>

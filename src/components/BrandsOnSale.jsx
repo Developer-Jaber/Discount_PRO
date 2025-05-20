@@ -13,8 +13,8 @@ const BrandsOnSale = () => {
   const brandOnSale = avilableBrand.filter(brand => brand.isSaleOn)
 
   return (
-    <div className='my-0 lg:hero'>
-      <div className='p-0 text-center hero-content'>
+    <div className='lg:hero'>
+      <div className='flex justify-center items-center p-0 min-h-screen text-center hero-content'>
         <div className='max-w-full'>
           <div className='mx-auto w-10/12 lg:w-9/12'>
             <h1 className='my-7 font-bold text-xl lg:text-3xl'>
@@ -27,7 +27,7 @@ const BrandsOnSale = () => {
               miss out on these limited-time offers!
             </p>
           </div>
-          <h1 className='my-5 font-bold text-2xl text-center text-red-500'>Offer's is going on !!!</h1>
+          <h1 className='my-5 font-bold text-red-500 text-2xl text-center'>Offer's is going on !!!</h1>
           <div className='space-x-4 bg-gray-300 my-5 p-4 rounded-box max-w-xs lg:max-w-md carousel carousel-center'>
             
             {

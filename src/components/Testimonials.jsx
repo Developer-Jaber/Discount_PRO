@@ -12,7 +12,7 @@ const Testimonials = () => {
    
 
   return (
-    <section className="bg-gray-100 py-12 testimonials">
+    <section className="flex justify-center items-center bg-gray-100 min-h-screen testimonials">
       <div className="mx-auto px-4 container">
         <h2 className="mb-8 font-bold text-3xl text-center">What Our Users Say</h2>
         <div className="gap-8 grid grid-cols-1 md:grid-cols-3 mx-auto w-10/12">

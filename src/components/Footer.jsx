@@ -86,7 +86,7 @@ const Footer = () => {
               <h4 className='font-bold text-xl'>Follow Us</h4>
               <div className='flex space-x-4 mt-2 text-3xl'>
                 <a
-                  href='https://www.facebook.com/JaberHossain.F'
+                  href='https://www.facebook.com/JABERHOSSAIN.dev'
                   className='text-white hover:text-gray-400'
                 >
                   <FaFacebook></FaFacebook>
@@ -115,7 +115,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className='border-gray-700 mt-10 pt-6 border-t text-center'>
+        <div className='mt-10 pt-6 border-gray-700 border-t text-center'>
           <p className='text-sm'>
             &copy; 2024 Discount PRO. All rights reserved.
           </p>

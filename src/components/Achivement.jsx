@@ -13,7 +13,7 @@ const Achivement = () => {
 
 
   return (
-    <section className='bg-white mx-auto py-12 w-10/12 achievements'>
+    <section className='flex justify-center items-center bg-white mx-auto py-12 w-10/12 min-h-screen achievements'>
       <div className='mx-auto px-4 container'>
         <h2 className='mb-8 font-bold text-3xl text-center'>
           Our Achievements

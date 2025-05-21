@@ -5,9 +5,6 @@ import Header from '../components/Header'
 const AboutMe = () => {
   return (
     <div>
-      <header className="bg-base-200">
-        <Header></Header>
-      </header>
       <section className='bg-white mx-auto py-12 w-10/12 about-us'>
         <div className='mx-auto px-4 container'>
           <h2 className='mb-8 font-bold text-3xl text-center'>About Us</h2>

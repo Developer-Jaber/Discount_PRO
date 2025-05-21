@@ -1,20 +1,16 @@
-import { Toaster } from "react-hot-toast";
-import BrandsOnSale from "../components/BrandsOnSale";
-import Carousel from "../components/Carousel";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import TopBrand from "../components/TopBrand";
-import Testimonials from "../components/Testimonials";
-import Achivement from "../components/Achivement";
-import { ToastContainer } from "react-toastify";
-import ContactUs from "../components/ContactUs";
+import React from 'react';
+import Carousel from '../components/Carousel';
+import TopBrand from '../components/TopBrand';
+import BrandsOnSale from '../components/BrandsOnSale';
+import Testimonials from '../components/Testimonials';
+import Achivement from '../components/Achivement';
+import ContactUs from '../components/ContactUs';
+import { Toaster } from 'react-hot-toast';
+import { ToastContainer } from 'react-toastify';
 
-const HomeLayout = () => {
+const Home = () => {
     return (
-        <div className="font-poppins">
-            <header className="bg-base-200">
-                <Header></Header>
-            </header>
+        <>
             <main className="min-h-screen">
                 <section className="mx-auto mt-5 lg:p-10 px-3 w-full lg:w-8/12">
                     <Carousel></Carousel>
@@ -35,13 +31,11 @@ const HomeLayout = () => {
                     <ContactUs></ContactUs>
                 </section>
             </main>
-            <footer className="bg-neutral">
-                <Footer></Footer>
-            </footer>
+            
             <Toaster></Toaster>
             <ToastContainer></ToastContainer>
-        </div>
+        </>
     );
 };
 
-export default HomeLayout;
+export default Home;

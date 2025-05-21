@@ -1,17 +1,15 @@
 import React from 'react'
 import Header from '../components/Header'
-import { Outlet } from 'react-router-dom'
 import Footer from '../components/Footer'
+import { Outlet } from 'react-router-dom'
 
-const LoginSignInPageLayout = () => {
+const MainLayout = () => {
   return (
-    <div className="font-poppins">
+    <div className='font-poppins'>
       <header className='bg-base-200'>
         <Header></Header>
       </header>
-      <main>
-        <Outlet></Outlet>
-      </main>
+      <Outlet></Outlet>
       <footer className='bg-neutral'>
         <Footer></Footer>
       </footer>
@@ -19,4 +17,4 @@ const LoginSignInPageLayout = () => {
   )
 }
 
-export default LoginSignInPageLayout
+export default MainLayout

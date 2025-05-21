@@ -13,7 +13,7 @@ const BrandsPage = () => {
             placeholder='Search brands...'
             // value={searchTerm}
             // onChange={e => setSearchTerm(e.target.value)}
-            className='border-gray-400 mb-6 p-2 border rounded w-full'
+            className='mb-6 p-2 border border-gray-400 rounded w-full'
           />
         </div>
       </nav>
@@ -21,6 +21,7 @@ const BrandsPage = () => {
         {
            data && data.map(brandCard => <BrandCard key={brandCard.id} data={brandCard}></BrandCard>)
         }
+        {/* {console.log(data)} */}
       </section>
     </section>
   )

@@ -5,9 +5,8 @@ const Footer = () => {
     <footer className='mx-auto p-4 lg:p-10 w-11/12 text-white footer'>
       <div className='mx-auto mt-10 container'>
         <div className='gap-8 grid grid-cols-1 md:grid-cols-4'>
-          {/* About Us */}
           <div>
-            <h3 className='mb-2 font-bold text-2xl'>About Discount PRO</h3>
+            <h3 className='mb-2 font-bold text-3xl'>Discount PRO</h3>
             <p className="text-slate-300">
               Discount PRO is your go-to application for finding and using
               discount coupons for popular e-commerce shops in Bangladesh. Save

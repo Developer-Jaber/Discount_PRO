@@ -7,6 +7,7 @@ import TopBrand from "../components/TopBrand";
 import Testimonials from "../components/Testimonials";
 import Achivement from "../components/Achivement";
 import { ToastContainer } from "react-toastify";
+import ContactUs from "../components/ContactUs";
 
 const HomeLayout = () => {
     return (
@@ -15,7 +16,7 @@ const HomeLayout = () => {
                 <Header></Header>
             </header>
             <main className="min-h-screen">
-                <section className="mx-auto mt-5 px-3 lg:p-10 w-full lg:w-8/12">
+                <section className="mx-auto mt-5 lg:p-10 px-3 w-full lg:w-8/12">
                     <Carousel></Carousel>
                 </section>
                 <section className="mx-auto p-10 w-full lg:w-10/12">
@@ -29,6 +30,9 @@ const HomeLayout = () => {
                 </section>
                 <section>
                     <Achivement></Achivement>
+                </section>
+                <section>
+                    <ContactUs></ContactUs>
                 </section>
             </main>
             <footer className="bg-neutral">

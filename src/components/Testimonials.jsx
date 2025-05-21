@@ -14,7 +14,10 @@ const Testimonials = () => {
   return (
     <section className="flex justify-center items-center bg-gray-100 min-h-screen testimonials">
       <div className="mx-auto px-4 container">
-        <h2 className="mb-8 font-bold text-3xl text-center">What Our Users Say</h2>
+        <h2 className="mb-12 font-bold text-gray-900 text-4xl md:text-5xl text-center">
+            What Our Users Say
+        </h2>
+        {/* <h2 className="mb-8 font-bold text-3xl lg:text-4xl md:text-5xl text-center">What Our Users Say</h2> */}
         <div className="gap-8 grid grid-cols-1 md:grid-cols-3 mx-auto w-10/12">
           {testimonial.map(testimonial => (
             <div key={testimonial.id} className="shadow-lg card compact">

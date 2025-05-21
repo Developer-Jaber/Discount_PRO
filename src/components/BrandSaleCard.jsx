@@ -12,10 +12,10 @@ const BrandSaleCard = ({ data }) => {
         />
         <div className='px-3 py-4'>
           <h1 className='mb-2 font-bold text-xl'>Brand Name : {brand_name}</h1>
-          <p className='text-base'>Coupons Available : <span className="mx-3 font-bold text-2xl text-red-400">{coupons.length}</span></p>
+          <p className='text-base'>Coupons Available : <span className="mx-3 font-bold text-red-400 text-2xl">{coupons.length}</span></p>
         </div>
         <div className='px-6 pt-1 pb-4'>
-          <h1>Category : <span className="mx-3 font-bold text-2xl text-red-400">{category}</span></h1>
+          <h1>Category : <span className="mx-3 font-bold text-red-400 text-2xl">{category}</span></h1>
         </div>
       </div>
     </div>

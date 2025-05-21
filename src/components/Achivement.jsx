@@ -15,8 +15,8 @@ const Achivement = () => {
   return (
     <section className='flex justify-center items-center bg-white mx-auto py-12 w-10/12 min-h-screen achievements'>
       <div className='mx-auto px-4 container'>
-        <h2 className='mb-8 font-bold text-3xl text-center'>
-          Our Achievements
+        <h2 className="mb-12 font-bold text-gray-900 text-4xl md:text-5xl text-center">
+           Our Achievements
         </h2>
         <div className='gap-8 grid grid-cols-1 md:grid-cols-3'>
           {achivement.map(achievement => (

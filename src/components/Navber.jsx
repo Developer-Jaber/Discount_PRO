@@ -52,7 +52,7 @@ const Navber = () => {
         </div>
         <a className='font-semibold text-xl lg:text-3xl animate__animated animate__rubberBand btn btn-ghost'>Discount PRO</a>
       </div>
-      <div className='lg:flex hidden navbar-center'>
+      <div className='hidden lg:flex navbar-center'>
         <ul className='gap-3 px-1 text-lg menu menu-horizontal'>{link}</ul>
       </div>
       <div className='navbar-end'>
@@ -62,7 +62,7 @@ const Navber = () => {
         >
           {
             user && user?.email ? (
-              <img className='rounded-full w-12 lg:w-16 h-12 lg:h-16' src={user?.photoURL} alt="" />
+              <img className='rounded-full w-8 lg:w-12 h-8 lg:h-12' src={user?.photoURL} alt="" />
             ) : (
               <FaUserCircle className='text-4xl'></FaUserCircle>
             )
